@@ -3,6 +3,7 @@ import db from "./db/db.js";
 import 'dotenv/config';
 import userRoutes from "./routes/userRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ db();
 
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
+app.use("/orders", orderRoutes);
 
 app.get("/", (req, res) => {
   res.send("Welcome to Online Grocery.");

@@ -32,3 +32,5 @@ const orders = [
     status: "completed",
   },
 ];
+
+export default orders;
