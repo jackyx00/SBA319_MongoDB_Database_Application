@@ -1,7 +1,8 @@
 import express from "express";
-import db from "./db/db.js"
+import db from "./db/db.js";
 import 'dotenv/config';
-import userRoutes from "./routes/userRoutes.js"
+import userRoutes from "./routes/userRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
 
 const app = express();
 
@@ -12,9 +13,10 @@ app.use(express.json());
 db();
 
 app.use("/users", userRoutes);
+app.use("/products", productRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the API.");
+  res.send("Welcome to Online Grocery.");
 });
 
 // Global error handling
