@@ -11,7 +11,7 @@ app.use(express.json());
 
 db();
 
-app.use("/user", userRoutes);
+app.use("/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Welcome to the API.");
