@@ -4,7 +4,7 @@ import originalOrders from "../seed/orders.js";
 // GET all orders of specific user by u_id
 async function getOrdersByUser(req, res) {
   try {
-    const orders = await Order.find({ u_id: req.params.id });
+    const orders = await Order.find({ u_id: req.params.userId });
     res.json(orders);
   } catch (e) {
     console.log(e.message);
@@ -38,7 +38,7 @@ async function updateOrder(req, res) {
 // DELETE delete a specified order by cart_id
 async function deleteOrder(req, res) {
   try {
-    const result = await Order.deleteOne({ cart_id: req.params.id });
+    const result = await Order.deleteOne({ cart_id: req.params.cartId });
     res.json(result);
   } catch (e) {
     console.log(e.message);

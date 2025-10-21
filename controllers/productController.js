@@ -38,7 +38,7 @@ async function updateProduct(req, res) {
 // DELETE delete a specified product by item_id
 async function deleteProduct(req, res) {
   try {
-    const result = await Product.deleteOne({ item_id: req.params.id });
+    const result = await Product.deleteOne({ item_id: req.params.itemId });
     res.json(result);
   } catch (e) {
     console.log(e.message);
