@@ -1,10 +1,10 @@
 import Order from "../models/orderSchema.js";
 import originalOrders from "../seed/orders.js";
 
-// GET all orders
-async function getOrders(req, res) {
+// GET all orders of specific user by u_id
+async function getOrdersByUser(req, res) {
   try {
-    const orders = await Order.find();
+    const orders = await Order.find({ u_id: req.params.id });
     res.json(orders);
   } catch (e) {
     console.log(e.message);
@@ -61,7 +61,7 @@ async function resetOrderData(req, res) {
 
 // renaming the functions in the export
 export default {
-  list: getOrders,
+  cartList: getOrdersByUser,
   create: createOrder,
   update: updateOrder,
   delete: deleteOrder,
