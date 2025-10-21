@@ -1,17 +1,16 @@
-import db from '../db/db.js'
-import originalUsers from '../seed/users.js'
+import User from "../models/userSchema.js";
+import originalUsers from '../seed/users.js';
 
 // seed database mongodb
 async function resetUserData(req, res) {
     try {
-        const collection = await db.collection("users")
-        const resultDelete = await collection.deleteMany({})
-        const resultInsert = await collection.insertMany(originalUsers)
-        console.log({ ...resultDelete, ...resultInsert })
-        res.redirect('/users')
+        const resultDelete = await User.deleteMany({});
+        const resultInsert = await User.insertMany(originalUsers);
+        console.log({ ...resultDelete, ...resultInsert });
+        res.json("successful");
     } catch(e) {
-        console.log(e.message)
-        res.json({ error: e.message })
+        console.log(e.message);
+        res.json({ error: e.message });
     }
 }
 
