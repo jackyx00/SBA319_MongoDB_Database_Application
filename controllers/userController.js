@@ -38,7 +38,7 @@ async function updateUser(req, res) {
 // DELETE delete a specified user by u_id
 async function deleteUser(req, res) {
   try {
-    const result = await User.deleteOne({ u_id: req.params.id });
+    const result = await User.deleteOne({ u_id: req.params.userId });
     res.json(result);
   } catch (e) {
     console.log(e.message);

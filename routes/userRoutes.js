@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/list", userController.list);
 router.post("/create", userController.create);
 router.put("/update/:id", userController.update);
-router.delete("/delete/:id", userController.delete);
+router.delete("/delete/:userId", userController.delete);
 router.get("/seed", userController.seed);
 
 export default router;

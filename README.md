@@ -10,6 +10,31 @@ A simple App built with Node.js, Express, and MongoDB (Mongoose) to manage users
 - MVC structure (Models, Controllers, Routes)
 - Error handling and clean JSON responses
 
+## API Endpoints
+
+### Users (/users)
+- GET /list (Get all users)
+- POST /create (Create a new user)
+- PUT /update/:id (Update user by ID)
+- DELETE /delete/:userId (Delete user by user ID)
+- GET /seed (Reset & seed user data)
+
+### Products (/products)
+
+- GET /list (Get all products)
+- POST /create (Add a new product)
+- PUT /update/:id (Update product by ID)
+- DELETE /delete/:itemId (Delete product by item ID)
+- GET /seed (Reset & seed product data)
+
+### Orders (/orders)
+
+- GET /cartList/:userId (Get all orders for a user)
+- POST /create (Create a new order)
+- PUT /update/:id (Update order by ID)
+- DELETE /delete/:cartId (Delete order by cart ID)
+- GET /seed (Reset & seed order data)
+
 ## Future
 - inventory_logs — to track stock changes.
 - categories — to organize items (Fruits, Vegetables, Beverages, etc.).
